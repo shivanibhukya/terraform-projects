@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - "main"
-      - "feature"
 
 env:
   AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
