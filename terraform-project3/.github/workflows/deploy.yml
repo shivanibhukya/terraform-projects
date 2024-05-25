@@ -1,5 +1,6 @@
 name: Terraform CI CD Pipeline for Deploying AWS Resources
 run-name: ${{ github.actor }} has triggered the pipeline
+
 on:
   push:
     branches:
@@ -21,16 +22,16 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
-        working-directory: ./terraform-vpc
+        working-directory: ./Terraform-VPC
       - name: Terraform Validate
         id: validate
         run: terraform validate
-        working-directory: ./terraform-vpc
+        working-directory: ./Terraform-VPC
       - name: Terraform Plan
         id: plan
         run: terraform plan
-        working-directory: ./terraform-vpc
+        working-directory: ./Terraform-VPC
       - name: Terraform Apply
         id: apply
-        run: terraform apply --auto-approve
-        working-directory: ./terraform-vpc
+        run: terraform destroy --auto-approve
+        working-directory: ./Terraform-VPC
